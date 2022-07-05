@@ -7,23 +7,41 @@
     <title>Oh My Food</title>
     <script src="https://kit.fontawesome.com/ab8b627319.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
+<body id="page-home">
+<div class="loader">
+    <span>O</span>
+    <span>h</span>
+    <span>m</span>
+    <span>y</span>
+    <span>f</span>
+    <span>o</span>
+    <span>o</span>
+    <span>d</span>
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+</div>
 <header>
     <h1>ohmyfood</h1>
 </header>
-<main>
+
     <div class="city">
         <i class="fa-solid fa-location-dot"></i>
         <h2>Paris, Belleville</h2>
     </div>
-
+    
     <section class="explorer">
         <h2>Réservez le menu qui <br/> vous convient</h2>
         <p>Découvrez des restaurants d'exeption,<br/> sélectionnés par nos soins.</p>
         <button>Explorer nos restaurants</button>
     </section>
-
+    
+    <main>
     <section class="tuto">
         <h2>Fonctionnement</h2>
         <ol>
@@ -33,8 +51,59 @@
         </ol>
     </section>
 
+    <section class="menus">
+        <h2>Restaurants</h2>
+        <div class="menus__cards">
+            <a href="./pages/resto-1.html" class="card new">
+                <div class=" card__image card__image-1"></div>
+                <div class="card__description">
+                    <h3>La palette du goût</h3>
+                    <p>Ménilmontant</p>
+                    <span class="heart"></span>
+                    
+                </div>
+            </a>
+            <a href="./pages/resto-2.html" class="card new">
+                <div class=" card__image card__image-2"></div>
+                <div class="card__description">
+                    <h3>La note enchantée</h3>
+                    <p>Charonne</p>
+                    <span class="heart"></span>
+                    
+                </div>
+            </a>
+            <a href="./pages/resto-3.html" class="card">
+                <div class=" card__image card__image-3"></div>
+                <div class="card__description">
+                    <h3>À la française</h3>
+                    <p>Cité rouge</p>
+                    <span class="heart"></span>
+                    
+                </div>
+            </a>
+            <a href="./pages/resto-4.html" class="card">
+                <div class=" card__image card__image-4"></div>
+                <div class="card__description">
+                    <h3>Le délice des sens</h3>
+                    <p>Folie-Méricourt</p>
+                    <span class="heart"></span>
+                    
+                </div>
+            </a>
+        </div>
+    </section>
+
 </main>
-<body>
+
+<footer>
+    <h2>ohmyfood</h2>
+    <p><i class="fa-solid fa-utensils"></i>
+        <a href="#">Proposez un restaurant</a></p>
+    <p><i class="fa-solid fa-handshake-angle"></i>
+        <a href="#">Devenir partenaire</a></p>
+    <p><a href="#">Mentions légales</a></p>
+    <p><a href="mailto:stephane.besube@outlook.fr">Contact</a></p>
+</footer>
     
 </body>
 </html>

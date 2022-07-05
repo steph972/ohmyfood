@@ -1,0 +1,203 @@
+@use "../utils/mixin.scss";
+@use "../utils/variables.scss";
+@use "../utils/colors.scss";
+@use "../utils/animation.scss";
+
+#page-resto{  
+
+.arrow-left{
+    @include mixin.arrow;
+    i:hover{
+        @include mixin.zoom;
+    }
+}
+
+.banner img{
+    display: block;
+    width: 100%;
+    height: 70vh;
+    background-size:100% 100%;
+}
+
+.resto-main{
+    background-color: colors.$lightergrey;
+.resto__title{  
+        margin-top: -3rem;
+        
+
+    h2{
+        background-color: colors.$lightergrey;
+        border-radius: 3rem 3rem 0 0;
+        font-family: "shrikhand", "cursive";
+        @include mixin.heart-animated;
+        position: relative;
+    }
+}  
+.menus-grid{
+         
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 10px;
+        height: auto;
+        @media (max-width: variables.$breakpoint){
+            grid-template-columns: 1fr; 
+        }
+        h3{
+            text-transform: uppercase;
+            font-weight: 500;
+            height: 45px;
+            margin: 0 0 1rem 2rem;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                top: 2rem;
+                left: 0rem;
+                height: 0.25rem;
+                width:2em;
+                background-color: colors.$color-tertiary;
+
+            }
+        }
+
+    .menu{ 
+        
+    &__category{
+        margin: 0 2rem 0 2rem;
+        height: auto;
+        background-color: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        @include mixin.base-shadow2;
+
+        .menu-item{
+            
+            display: flex;
+            border-radius: 1rem;
+            height: 100%;
+            cursor: pointer;
+
+            &__descriptions{
+                padding: 1rem ;
+                overflow: hidden;
+            
+                h4, p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis; 
+                }
+            }
+        
+            &__prix{
+                margin-left: auto;
+                font-weight: 900;
+                display: flex;
+                padding: 1rem;
+                align-items: flex-end;
+        
+            }
+            &__check{
+                $button-width:4rem;
+                background-color: colors.$color-tertiary;
+                border-radius: 0 1rem 1rem 0;
+                width: $button-width;
+                margin-right: -$button-width;
+                transition: margin-right .5s;
+                display: grid;
+                flex-shrink: 0;
+                place-items: center;
+                .spin{
+                    color: white;
+                    ;
+                }
+                
+            }
+            &:hover {
+                .menu-item__check {
+                    margin-right: 0;
+                   
+                }
+                .spin{
+                    transition: transform .5s ease-in-out;
+                    transform: rotate(360deg);
+                    }
+                }
+    }
+}
+}
+}
+}
+}
+.entrée, .plats, .dessert{
+    margin: 1rem 0 1rem 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.order{
+    height: 25vh;
+    display: grid;
+    place-items: center;
+    padding-bottom: 4rem;
+    button{
+        @include mixin.base-button;
+        width:20rem;
+    }
+}
+
+.entrée {
+    .menu__category{
+        @for $i from 1 through 10{
+            &:nth-child(2){
+                animation-delay: 200ms;  
+            }
+            &:nth-child(3){
+                animation-delay: 400ms;  
+            }
+            &:nth-child(4){
+                animation-delay: 600ms;  
+            }
+            &:nth-child(5){
+                animation-delay: 700ms;  
+            }
+        }
+        animation: appear 1s;
+        animation-fill-mode: both;
+    }
+}
+.plats {
+    .menu__category{
+        @for $i from 1 through 10{
+            &:nth-child(2){
+                animation-delay: 800ms;  
+            }
+            &:nth-child(3){
+                animation-delay: 1000ms;  
+            }
+            &:nth-child(4){
+                animation-delay: 1200ms;  
+            }
+            
+        }
+        animation: appear 1s;
+        animation-fill-mode: both;
+    }
+}
+.dessert {
+    .menu__category{
+        @for $i from 1 through 10{
+            &:nth-child(2){
+                animation-delay: 1400ms;  
+            }
+            &:nth-child(3){
+                animation-delay: 1600ms;  
+            }
+            &:nth-child(4){
+                animation-delay: 1800ms;  
+            }
+        }
+        animation: appear 1s;
+        animation-fill-mode: both;
+    }
+}
